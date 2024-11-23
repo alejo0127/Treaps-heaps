@@ -3,7 +3,7 @@ Presentacion proyecto final DS2024-2
 
 En este documento está el código de Treaps y Heaps
 
-# Código de Treaps:
+## Código de Treaps:
 
 ```c++
 #include <ctime>
@@ -332,7 +332,7 @@ int main() {
 
 ```
 
-#Código de Heaps:
+## Código de Heaps:
 
 ```c++
 class MaxHeap {
