@@ -2,7 +2,9 @@
 Presentacion proyecto final DS2024-2
 
 En este documento está el código de Treaps y Heaps
-Código de Treaps:
+
+# Código de Treaps:
+
 ```c++
 #include <ctime>
 #include <iostream>
@@ -330,93 +332,110 @@ int main() {
 
 ```
 
-Código de Heaps:
+#Código de Heaps:
 
 ```c++
-#include <iostream>
-#include <vector>
-#include <stdexcept>
-
-using namespace std;
-
 class MaxHeap {
 private:
     vector<int> heap;
 
+    // Returns the index of the parent of the given node
     int getParentIndex(int index) { return (index - 1) / 2; }
+
+    // Returns the index of the left child of the given node
     int getLeftChildIndex(int index) { return 2 * index + 1; }
+
+    // Returns the index of the right child of the given node
     int getRightChildIndex(int index) { return 2 * index + 2; }
 
+    // Checks if the node has a left child
     bool hasLeftChild(int index) { return getLeftChildIndex(index) < heap.size(); }
+
+    // Checks if the node has a right child
     bool hasRightChild(int index) { return getRightChildIndex(index) < heap.size(); }
+
+    // Checks if the node has a parent
     bool hasParent(int index) { return getParentIndex(index) >= 0; }
 
+    // Returns the value of the left child of the given node
     int leftChild(int index) { return heap[getLeftChildIndex(index)]; }
+
+    // Returns the value of the right child of the given node
     int rightChild(int index) { return heap[getRightChildIndex(index)]; }
+
+    // Returns the value of the parent of the given node
     int parent(int index) { return heap[getParentIndex(index)]; }
 
+    // Swaps the values of two nodes in the heap
     void swap(int indexOne, int indexTwo) {
         int temp = heap[indexOne];
         heap[indexOne] = heap[indexTwo];
         heap[indexTwo] = temp;
     }
 
+    // Maintains the max-heap property by moving a node up
     void heapifyUp() {
-        int index = heap.size() - 1;
+        int index = heap.size() - 1; // Start with the last inserted node
         while (hasParent(index) && parent(index) < heap[index]) {
             swap(getParentIndex(index), index);
-            index = getParentIndex(index);
+            index = getParentIndex(index); // Move up to the parent node
         }
     }
 
+    // Maintains the max-heap property by moving a node down
     void heapifyDown() {
-        int index = 0;
-        while (hasLeftChild(index)) {
+        int index = 0; // Start with the root
+        while (hasLeftChild(index)) { // Continue while there is at least one child
             int largerChildIndex = getLeftChildIndex(index);
             if (hasRightChild(index) && rightChild(index) > leftChild(index)) {
-                largerChildIndex = getRightChildIndex(index);
+                largerChildIndex = getRightChildIndex(index); // Choose the larger child
             }
 
             if (heap[index] > heap[largerChildIndex]) {
-                break;
+                break; // Stop if the heap property is satisfied
             } else {
-                swap(index, largerChildIndex);
+                swap(index, largerChildIndex); // Swap with the larger child
             }
-            index = largerChildIndex;
+            index = largerChildIndex; // Move down to the larger child
         }
     }
 
 public:
     MaxHeap() {}
 
+    // Inserts a value into the heap
     void insert(int value) {
-        heap.push_back(value);
-        heapifyUp();
+        heap.push_back(value); // Add the new value at the end
+        heapifyUp(); // Restore the heap property
     }
 
+    // Removes and returns the maximum value from the heap
     int remove() {
         if (heap.empty()) {
-            throw out_of_range("Heap is empty");
+            throw out_of_range("Heap is empty"); // Handle empty heap case
         }
-        int maxValue = heap[0];
-        heap[0] = heap.back();
-        heap.pop_back();
-        heapifyDown();
+        int maxValue = heap[0]; // Store the root (max value)
+        heap[0] = heap.back(); // Replace root with the last element
+        heap.pop_back(); // Remove the last element
+        heapifyDown(); // Restore the heap property
         return maxValue;
     }
 
+    // Returns the maximum value without removing it
     int peek() const {
         if (heap.empty()) {
-            throw out_of_range("Heap is empty");
+            throw out_of_range("Heap is empty"); // Handle empty heap case
         }
-        return heap[0];
+        return heap[0]; // The root is the maximum value
     }
 
+    // Prints the contents of the heap
     void printHeap() const {
         for (int val : heap) {
-            cout << val << " ";
+            cout << val << " "; // Print each value separated by spaces
         }
-        cout << endl;
+        cout << endl; // End the line
     }
 };
+
 ```
