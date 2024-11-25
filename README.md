@@ -4,6 +4,9 @@ Presentacion proyecto final DS2024-2
 Carpeta de videos (Si no puede visualizarlo desde el navegador, descargar o usar una extensión de visualización de videos de drive):
 https://drive.google.com/drive/folders/1UZGW9SSC7g7ztlgyiUX4DA0EGQ_dwvRG?usp=drive_link
 
+Tablero digital con explicación escrita de las operaciones del Treap:
+https://excalidraw.com/#json=THgHssFm7bc6KXbN7SgjC,pQcjlK84pnDFAlx-GbSUlg
+
 En este documento está el código de Treap y MaxHeap
 
 ## Código de Treap
