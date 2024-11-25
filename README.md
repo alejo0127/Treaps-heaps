@@ -1,7 +1,7 @@
 # Treaps-heaps
 Presentacion proyecto final DS2024-2
 
-Carpeta de videos:
+Carpeta de videos (Para visualizar hay que descargar):
 https://drive.google.com/drive/folders/1UZGW9SSC7g7ztlgyiUX4DA0EGQ_dwvRG?usp=drive_link
 
 En este documento está el código de Treaps y Heaps
