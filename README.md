@@ -1,7 +1,7 @@
 # Treaps-heaps
 Presentacion proyecto final DS2024-2
 
-Carpeta de videos (Para visualizar hay que descargar o usar una extensión de visualizador de videos de drive):
+Carpeta de videos (Para visualizar hay que descargar o usar una extensión de visualización de videos de drive):
 https://drive.google.com/drive/folders/1UZGW9SSC7g7ztlgyiUX4DA0EGQ_dwvRG?usp=drive_link
 
 En este documento está el código de Treap y MaxHeap
@@ -15,7 +15,7 @@ En este documento está el código de Treap y MaxHeap
 #include <stdlib.h>
 #include <random>
 #include <chrono>
-//Treap code
+//Treap's code
 
 using namespace std;
 //random number generator
