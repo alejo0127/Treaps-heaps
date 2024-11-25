@@ -4,9 +4,9 @@ Presentacion proyecto final DS2024-2
 Carpeta de videos (Para visualizar hay que descargar o usar una extensión de visualizador de videos de drive):
 https://drive.google.com/drive/folders/1UZGW9SSC7g7ztlgyiUX4DA0EGQ_dwvRG?usp=drive_link
 
-En este documento está el código de Treaps y Heaps
+En este documento está el código de Treap y MaxHeap
 
-## Código de Treaps:
+## Código de Treap
 
 ```c++
 #include <ctime>
@@ -335,7 +335,7 @@ int main() {
 
 ```
 
-## Código de Heaps:
+## Código de MaxHeap
 
 ```c++
 class MaxHeap {
